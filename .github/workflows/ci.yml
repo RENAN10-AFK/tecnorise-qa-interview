@@ -47,6 +47,14 @@ jobs:
         env:
           DEBIAN_FRONTEND: noninteractive
 
+      - name: Install ChromeDriver
+        run: |
+          CHROME_VERSION=$(google-chrome --version | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')
+          wget -q -O chromedriver.zip https://chromedriver.storage.googleapis.com/${CHROME_VERSION}/chromedriver_linux64.zip
+          unzip chromedriver.zip
+          sudo mv chromedriver /usr/bin/chromedriver
+          sudo chmod +x /usr/bin/chromedriver
+
       - name: Set up Python environment
         run: |
           python -m venv venv
@@ -60,6 +68,14 @@ jobs:
         run: |
           source venv/bin/activate
           pip install robotframework robotframework-seleniumlibrary
+
+      - name: Wait for server to start
+        run: |
+          for i in {1..30}; do
+            curl -sSf http://localhost:5173 && break
+            echo "Waiting for server to start..."
+            sleep 5
+          done
 
       - name: Run Chrome Robot Tests
         run: |
