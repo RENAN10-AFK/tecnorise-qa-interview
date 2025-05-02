@@ -37,10 +37,14 @@ Os testes automatizados foram realizados utilizando o Robot Framework com a bibl
    - **Resultado:** O sistema aceitou valores muito altos, o que não é recomendado.
 
 7. **Testar Descrição Muito Longa**
-   - Verifica se uma descrição longa é exibida corretamente no card do produto.
+   - Verifica se uma descrição muito longa é exibida corretamente no card do produto e documenta o comportamento inadequado.
+   - **Resultado:** O texto da descrição ultrapassa o background do card, o que não é visualmente adequado.
+
+8. **Testar Descrição Muito Longa com Palavras Separadas**
+   - Verifica se uma descrição muito longa com palavras separadas é exibida corretamente no card do produto.
    - **Resultado:** Passou com sucesso.
 
-8. **Testar Exclusão sem Confirmação**
+9. **Testar Exclusão sem Confirmação**
    - Verifica se ações destrutivas, como exclusão, são realizadas sem confirmação e documenta o comportamento inadequado.
    - **Resultado:** O sistema permitiu a exclusão sem confirmação, o que não é recomendado.
 
