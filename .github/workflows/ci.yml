@@ -40,6 +40,13 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y git xvfb scrot zip curl libxml2-dev libxslt1-dev
 
+      - name: Install Google Chrome
+        run: |
+          wget -q -O google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo dpkg -i google-chrome.deb || sudo apt-get -f install -y
+        env:
+          DEBIAN_FRONTEND: noninteractive
+
       - name: Set up Python environment
         run: |
           python -m venv venv
@@ -55,11 +62,14 @@ jobs:
           pip install robotframework robotframework-seleniumlibrary
 
       - name: Run tests
+        env:
+          CHROME_BIN: /usr/bin/google-chrome-stable
         run: |
-          source venv/bin/activate
-          npm run dev &
-          sleep 10 # Aguarda o servidor iniciar
-          robot --outputdir robot/results robot/tests
+          # Inicia o servidor em background com xvfb para servir de display virtual
+          xvfb-run -a npm run dev &
+          sleep 10  # Aguarda o servidor iniciar
+          # Executa os testes robot usando xvfb
+          xvfb-run -a robot --outputdir robot/results robot/tests
 
       - name: Upload Robot Framework Reports
         if: always()
