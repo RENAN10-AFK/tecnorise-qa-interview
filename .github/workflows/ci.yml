@@ -33,12 +33,6 @@ jobs:
           sleep 10 # Aguarda o servidor iniciar
           robot --outputdir robot/results robot/tests
 
-      - name: Upload test results
-        uses: actions/upload-artifact@v3
-        with:
-          name: robot-test-results
-          path: robot/results/*
-
       - name: Upload Robot Framework Reports
         if: always()
         uses: actions/upload-artifact@v4
