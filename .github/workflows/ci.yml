@@ -61,15 +61,14 @@ jobs:
           source venv/bin/activate
           pip install robotframework robotframework-seleniumlibrary
 
-      - name: Run tests
-        env:
-          CHROME_BIN: /usr/bin/google-chrome-stable
+      - name: Run Chrome Robot Tests
         run: |
-          # Inicia o servidor em background com xvfb para servir de display virtual
-          xvfb-run -a npm run dev &
-          sleep 10  # Aguarda o servidor iniciar
-          # Executa os testes robot usando xvfb
-          xvfb-run -a robot --outputdir robot/results robot/tests
+          source venv/bin/activate
+          xvfb-run robot \
+            --variable BROWSER:chrome \
+            --outputdir robot/results \
+            robot/tests
+        shell: bash
 
       - name: Upload Robot Framework Reports
         if: always()
