@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-02T19:31:44.409409" rpa="false" schemaversion="5">
+<suite id="s1" name="Main" source="C:\Users\Renan.ribeiro\Desktop\Teste\tecnorise-qa-interview\robot\tests\main.robot">
+<test id="s1-t1" name="Abrir Página Inicial" line="7">
+<kw name="Abrir o Website" owner="main">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:44.689357" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-02T19:31:44.688644" elapsed="1.503774"/>
+</kw>
+<status status="PASS" start="2025-05-02T19:31:44.687373" elapsed="1.505252"/>
+</kw>
+<status status="PASS" start="2025-05-02T19:31:44.686570" elapsed="1.506374"/>
+</test>
+<test id="s1-t2" name="Adicionar Produto" line="10">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:46.194651" level="INFO">Clicking button 'xpath://button[contains(text(),'Adicionar Produto')]'.</msg>
+<arg>xpath://button[contains(text(),'Adicionar Produto')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:46.194143" elapsed="0.099121"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:46.293839" level="INFO">Typing text 'Produto Teste' into text field 'xpath://input[@placeholder='Digite o nome do produto']'.</msg>
+<arg>xpath://input[@placeholder='Digite o nome do produto']</arg>
+<arg>${PRODUCT_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:46.293618" elapsed="0.095513"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:46.389937" level="INFO">Typing text '10.50' into text field 'xpath://input[@placeholder='0.00']'.</msg>
+<arg>xpath://input[@placeholder='0.00']</arg>
+<arg>${PRODUCT_PRICE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:46.389609" elapsed="0.060489"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:46.450870" level="INFO">Typing text 'Produto de teste' into text field 'xpath://textarea[@placeholder='Descreva o produto']'.</msg>
+<arg>xpath://textarea[@placeholder='Descreva o produto']</arg>
+<arg>${PRODUCT_DESCRIPTION}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:46.450563" elapsed="0.086036"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:46.537053" level="INFO">Clicking button 'xpath://button[contains(text(),'Salvar')]'.</msg>
+<arg>xpath://button[contains(text(),'Salvar')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:46.536875" elapsed="0.063584"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:46.611523" level="INFO">Current page contains text 'Produto Teste'.</msg>
+<arg>${PRODUCT_NAME}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-05-02T19:31:46.600763" elapsed="0.010870"/>
+</kw>
+<doc>Testa a funcionalidade de adicionar um produto</doc>
+<status status="PASS" start="2025-05-02T19:31:46.193615" elapsed="0.418250"/>
+</test>
+<test id="s1-t3" name="Editar Produto" line="19">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:46.612785" level="INFO">Clicking button 'xpath://button[contains(text(),'Editar')]'.</msg>
+<arg>xpath://button[contains(text(),'Editar')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:46.612624" elapsed="0.056887"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:46.670454" level="INFO">Typing text 'Produto Teste' into text field 'xpath://input[@placeholder='Digite o nome do produto']'.</msg>
+<arg>xpath://input[@placeholder='Digite o nome do produto']</arg>
+<arg>${PRODUCT_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:46.670016" elapsed="0.063220"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:46.733648" level="INFO">Clicking button 'xpath://button[contains(text(),'Salvar')]'.</msg>
+<arg>xpath://button[contains(text(),'Salvar')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:46.733496" elapsed="0.046890"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:46.787324" level="INFO">Current page contains text 'Produto Teste'.</msg>
+<arg>${PRODUCT_NAME}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-05-02T19:31:46.780727" elapsed="0.006679"/>
+</kw>
+<doc>Testa a funcionalidade de editar um produto</doc>
+<status status="PASS" start="2025-05-02T19:31:46.612218" elapsed="0.175388"/>
+</test>
+<test id="s1-t4" name="Excluir Produto" line="26">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:46.788602" level="INFO">Clicking button 'xpath://button[contains(text(),'Excluir')]'.</msg>
+<arg>xpath://button[contains(text(),'Excluir')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:46.788443" elapsed="0.053611"/>
+</kw>
+<kw name="Page Should Not Contain" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:46.858942" level="INFO">Current page does not contain text 'Produto Teste'.</msg>
+<arg>${PRODUCT_NAME}</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<status status="PASS" start="2025-05-02T19:31:46.842287" elapsed="0.016714"/>
+</kw>
+<doc>Testa a funcionalidade de excluir um produto</doc>
+<status status="PASS" start="2025-05-02T19:31:46.788112" elapsed="0.071176"/>
+</test>
+<test id="s1-t5" name="Testar Campo de Preço com Número Negativo" line="31">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:46.860264" level="INFO">Clicking button 'xpath://button[contains(text(),'Adicionar Produto')]'.</msg>
+<arg>xpath://button[contains(text(),'Adicionar Produto')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:46.860123" elapsed="0.062919"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:46.923986" level="INFO">Typing text 'Produto Teste' into text field 'xpath://input[@placeholder='Digite o nome do produto']'.</msg>
+<arg>xpath://input[@placeholder='Digite o nome do produto']</arg>
+<arg>${PRODUCT_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:46.923596" elapsed="0.086848"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:47.011073" level="INFO">Typing text '-10.50' into text field 'xpath://input[@placeholder='0.00']'.</msg>
+<arg>xpath://input[@placeholder='0.00']</arg>
+<arg>-10.50</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:47.010871" elapsed="0.048825"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:47.060098" level="INFO">Typing text 'Produto de teste' into text field 'xpath://textarea[@placeholder='Descreva o produto']'.</msg>
+<arg>xpath://textarea[@placeholder='Descreva o produto']</arg>
+<arg>${PRODUCT_DESCRIPTION}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:47.059922" elapsed="0.063837"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:47.124239" level="INFO">Clicking button 'xpath://button[contains(text(),'Salvar')]'.</msg>
+<arg>xpath://button[contains(text(),'Salvar')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:47.124076" elapsed="0.068214"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:47.205720" level="INFO">Current page contains text 'Preço deve ser positivo'.</msg>
+<arg>Preço deve ser positivo</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-05-02T19:31:47.192773" elapsed="0.013072"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:47.206542" level="INFO">Typing text '10.50' into text field 'xpath://input[@placeholder='0.00']'.</msg>
+<arg>xpath://input[@placeholder='0.00']</arg>
+<arg>${PRODUCT_PRICE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:47.206137" elapsed="0.057664"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:47.264301" level="INFO">Clicking button 'xpath://button[contains(text(),'Salvar')]'.</msg>
+<arg>xpath://button[contains(text(),'Salvar')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:47.264126" elapsed="0.044800"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:47.317190" level="INFO">Current page contains text 'Produto Teste'.</msg>
+<arg>${PRODUCT_NAME}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-05-02T19:31:47.309312" elapsed="0.007996"/>
+</kw>
+<doc>Verifica se o campo de preço aceita número negativo e impede o salvamento</doc>
+<status status="PASS" start="2025-05-02T19:31:46.859790" elapsed="0.458217"/>
+</test>
+<test id="s1-t6" name="Testar Campo de Preço com Valor Muito Alto" line="43">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:47.319444" level="INFO">Clicking button 'xpath://button[contains(text(),'Adicionar Produto')]'.</msg>
+<arg>xpath://button[contains(text(),'Adicionar Produto')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:47.319247" elapsed="0.050002"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:47.369759" level="INFO">Typing text 'Produto Teste' into text field 'xpath://input[@placeholder='Digite o nome do produto']'.</msg>
+<arg>xpath://input[@placeholder='Digite o nome do produto']</arg>
+<arg>${PRODUCT_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:47.369567" elapsed="0.062396"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:47.432525" level="INFO">Typing text '9999999999.99' into text field 'xpath://input[@placeholder='0.00']'.</msg>
+<arg>xpath://input[@placeholder='0.00']</arg>
+<arg>9999999999.99</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:47.432349" elapsed="0.062276"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:47.495360" level="INFO">Typing text 'Produto de teste' into text field 'xpath://textarea[@placeholder='Descreva o produto']'.</msg>
+<arg>xpath://textarea[@placeholder='Descreva o produto']</arg>
+<arg>${PRODUCT_DESCRIPTION}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:47.495041" elapsed="0.060694"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:47.556201" level="INFO">Clicking button 'xpath://button[contains(text(),'Salvar')]'.</msg>
+<arg>xpath://button[contains(text(),'Salvar')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:47.556061" elapsed="0.046892"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:47.609220" level="INFO">Current page contains text 'Produto Teste'.</msg>
+<arg>${PRODUCT_NAME}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-05-02T19:31:47.603203" elapsed="0.006086"/>
+</kw>
+<kw name="Log" owner="BuiltIn" type="TEARDOWN">
+<msg time="2025-05-02T19:31:47.609644" level="INFO">O sistema aceitou um valor muito alto no campo de preço, o que não é recomendado.</msg>
+<arg>O sistema aceitou um valor muito alto no campo de preço, o que não é recomendado.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-02T19:31:47.609543" elapsed="0.000142"/>
+</kw>
+<doc>Verifica se o sistema aceita valores altos no campo de preço e documenta o comportamento inadequado</doc>
+<status status="PASS" start="2025-05-02T19:31:47.318837" elapsed="0.290992"/>
+</test>
+<test id="s1-t7" name="Testar Descrição Muito Longa" line="53">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:47.610854" level="INFO">Clicking button 'xpath://button[contains(text(),'Adicionar Produto')]'.</msg>
+<arg>xpath://button[contains(text(),'Adicionar Produto')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:47.610661" elapsed="0.048634"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:47.659790" level="INFO">Typing text 'Produto Teste' into text field 'xpath://input[@placeholder='Digite o nome do produto']'.</msg>
+<arg>xpath://input[@placeholder='Digite o nome do produto']</arg>
+<arg>${PRODUCT_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:47.659587" elapsed="0.071406"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:47.731645" level="INFO">Typing text '10.50' into text field 'xpath://input[@placeholder='0.00']'.</msg>
+<arg>xpath://input[@placeholder='0.00']</arg>
+<arg>${PRODUCT_PRICE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:47.731405" elapsed="0.061599"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:47.793546" level="INFO">Typing text 'Este é um texto muito longo que será usado para testar a exibição de descrições no card do produto. Ele deve ser suficientemente grande para ultrapassar os limites visuais do card.' into text field 'xpath://textarea[@placeholder='Descreva o produto']'.</msg>
+<arg>xpath://textarea[@placeholder='Descreva o produto']</arg>
+<arg>${LONG_DESCRIPTION}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:47.793357" elapsed="0.169897"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:47.963669" level="INFO">Clicking button 'xpath://button[contains(text(),'Salvar')]'.</msg>
+<arg>xpath://button[contains(text(),'Salvar')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:47.963510" elapsed="0.044006"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:48.015669" level="INFO">Current page contains text 'Produto Teste'.</msg>
+<arg>${PRODUCT_NAME}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-05-02T19:31:48.007789" elapsed="0.007954"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:48.023065" level="INFO">${description_div} = &lt;selenium.webdriver.remote.webelement.WebElement (session="7c41277ae9f70145b550e1aab8f07c28", element="f.75397AB18E07F81C6879F9674BB1BD4A.d.C4E9F266C35DA580D47340354A754FA7.e.59")&gt;</msg>
+<var>${description_div}</var>
+<arg>xpath://li[div/strong[text()='${PRODUCT_NAME}']]//div</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:48.015965" elapsed="0.007139"/>
+</kw>
+<kw name="Get Element Size" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:48.035195" level="INFO">${description_div_size} = (190, 52)</msg>
+<var>${description_div_size}</var>
+<arg>${description_div}</arg>
+<doc>Returns width and height of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:48.023453" elapsed="0.011778"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:48.042706" level="INFO">${card_element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="7c41277ae9f70145b550e1aab8f07c28", element="f.75397AB18E07F81C6879F9674BB1BD4A.d.C4E9F266C35DA580D47340354A754FA7.e.58")&gt;</msg>
+<var>${card_element}</var>
+<arg>xpath://li[div/strong[text()='${PRODUCT_NAME}']]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:48.035480" elapsed="0.007303"/>
+</kw>
+<kw name="Get Element Size" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:48.054206" level="INFO">${card_size} = (728, 86)</msg>
+<var>${card_size}</var>
+<arg>${card_element}</arg>
+<doc>Returns width and height of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:48.043253" elapsed="0.011021"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${description_div_size}[0] &gt; ${card_size}[0]</arg>
+<arg>Log</arg>
+<arg>O texto da descrição ultrapassa o background do card, o que não é visualmente adequado.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-02T19:31:48.054511" elapsed="0.000506"/>
+</kw>
+<doc>Verifica se uma descrição muito longa é exibida corretamente no card do produto e documenta o comportamento inadequado</doc>
+<status status="PASS" start="2025-05-02T19:31:47.610220" elapsed="0.444978"/>
+</test>
+<test id="s1-t8" name="Testar Descrição Muito Longa com Palavras Separadas" line="67">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:48.056962" level="INFO">Clicking button 'xpath://button[contains(text(),'Adicionar Produto')]'.</msg>
+<arg>xpath://button[contains(text(),'Adicionar Produto')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:48.056723" elapsed="0.055391"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:48.113129" level="INFO">Typing text 'Produto Teste Separado' into text field 'xpath://input[@placeholder='Digite o nome do produto']'.</msg>
+<arg>xpath://input[@placeholder='Digite o nome do produto']</arg>
+<arg>${PRODUCT_NAME_SEPARATED}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:48.112774" elapsed="0.121347"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:48.234623" level="INFO">Typing text '10.50' into text field 'xpath://input[@placeholder='0.00']'.</msg>
+<arg>xpath://input[@placeholder='0.00']</arg>
+<arg>${PRODUCT_PRICE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:48.234402" elapsed="0.062797"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:48.297652" level="INFO">Typing text 'Este é um texto muito longo com palavras separadas que deve se ajustar corretamente ao card sem ultrapassá-lo.' into text field 'xpath://textarea[@placeholder='Descreva o produto']'.</msg>
+<arg>xpath://textarea[@placeholder='Descreva o produto']</arg>
+<arg>${PRODUCT_DESCRIPTION_SEPARATED}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:48.297463" elapsed="0.131361"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:48.429401" level="INFO">Clicking button 'xpath://button[contains(text(),'Salvar')]'.</msg>
+<arg>xpath://button[contains(text(),'Salvar')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:48.429203" elapsed="0.046802"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:48.485778" level="INFO">Current page contains text 'Produto Teste Separado'.</msg>
+<arg>${PRODUCT_NAME_SEPARATED}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-05-02T19:31:48.476312" elapsed="0.009541"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:48.493724" level="INFO">${description_div} = &lt;selenium.webdriver.remote.webelement.WebElement (session="7c41277ae9f70145b550e1aab8f07c28", element="f.75397AB18E07F81C6879F9674BB1BD4A.d.C4E9F266C35DA580D47340354A754FA7.e.112")&gt;</msg>
+<var>${description_div}</var>
+<arg>xpath://li[div/strong[text()='${PRODUCT_NAME_SEPARATED}']]//div</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:48.486070" elapsed="0.007692"/>
+</kw>
+<kw name="Get Element Size" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:48.502743" level="INFO">${description_div_size} = (537, 76)</msg>
+<var>${description_div_size}</var>
+<arg>${description_div}</arg>
+<doc>Returns width and height of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:48.493983" elapsed="0.008793"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:48.509511" level="INFO">${card_element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="7c41277ae9f70145b550e1aab8f07c28", element="f.75397AB18E07F81C6879F9674BB1BD4A.d.C4E9F266C35DA580D47340354A754FA7.e.111")&gt;</msg>
+<var>${card_element}</var>
+<arg>xpath://li[div/strong[text()='${PRODUCT_NAME_SEPARATED}']]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:48.502996" elapsed="0.006557"/>
+</kw>
+<kw name="Get Element Size" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:48.522750" level="INFO">${card_size} = (728, 110)</msg>
+<var>${card_size}</var>
+<arg>${card_element}</arg>
+<doc>Returns width and height of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:48.509964" elapsed="0.012827"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-02T19:31:48.523367" level="INFO">O texto da descrição está corretamente ajustado ao card.</msg>
+<arg>O texto da descrição está corretamente ajustado ao card.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-02T19:31:48.523295" elapsed="0.000103"/>
+</kw>
+<arg>${description_div_size}[0] &lt;= ${card_size}[0]</arg>
+<arg>Log</arg>
+<arg>O texto da descrição está corretamente ajustado ao card.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-02T19:31:48.523040" elapsed="0.000393"/>
+</kw>
+<doc>Verifica se uma descrição muito longa com palavras separadas é exibida corretamente no card do produto</doc>
+<status status="PASS" start="2025-05-02T19:31:48.055986" elapsed="0.467610"/>
+</test>
+<test id="s1-t9" name="Testar Exclusão sem Confirmação" line="81">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:48.524347" level="INFO">Clicking button 'xpath://button[contains(text(),'Adicionar Produto')]'.</msg>
+<arg>xpath://button[contains(text(),'Adicionar Produto')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:48.524230" elapsed="0.049287"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:48.574364" level="INFO">Typing text 'Alterar Produto' into text field 'xpath://input[@placeholder='Digite o nome do produto']'.</msg>
+<arg>xpath://input[@placeholder='Digite o nome do produto']</arg>
+<arg>Alterar Produto</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:48.573891" elapsed="0.082472"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:48.656876" level="INFO">Typing text '10.50' into text field 'xpath://input[@placeholder='0.00']'.</msg>
+<arg>xpath://input[@placeholder='0.00']</arg>
+<arg>${PRODUCT_PRICE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:48.656650" elapsed="0.048628"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:48.705719" level="INFO">Typing text 'Produto de teste' into text field 'xpath://textarea[@placeholder='Descreva o produto']'.</msg>
+<arg>xpath://textarea[@placeholder='Descreva o produto']</arg>
+<arg>${PRODUCT_DESCRIPTION}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:48.705530" elapsed="0.052904"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:48.759010" level="INFO">Clicking button 'xpath://button[contains(text(),'Salvar')]'.</msg>
+<arg>xpath://button[contains(text(),'Salvar')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:48.758782" elapsed="0.043469"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:48.802823" level="INFO">Clicking button 'xpath://li[div/strong[text()='Alterar Produto']]//button[contains(text(),'Excluir')]'.</msg>
+<arg>xpath://li[div/strong[text()='Alterar Produto']]//button[contains(text(),'Excluir')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-02T19:31:48.802649" elapsed="0.049480"/>
+</kw>
+<kw name="Page Should Not Contain" owner="SeleniumLibrary">
+<msg time="2025-05-02T19:31:48.868373" level="INFO">Current page does not contain text 'Alterar Produto'.</msg>
+<arg>Alterar Produto</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<status status="PASS" start="2025-05-02T19:31:48.852621" elapsed="0.015846"/>
+</kw>
+<kw name="Log" owner="BuiltIn" type="TEARDOWN">
+<msg time="2025-05-02T19:31:48.869023" level="INFO">O sistema permitiu a exclusão sem confirmação, o que não é recomendado.</msg>
+<arg>O sistema permitiu a exclusão sem confirmação, o que não é recomendado.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-02T19:31:48.868919" elapsed="0.000140"/>
+</kw>
+<doc>Verifica se ações destrutivas, como exclusão, são realizadas sem confirmação e documenta o comportamento inadequado</doc>
+<status status="PASS" start="2025-05-02T19:31:48.523932" elapsed="0.345292"/>
+</test>
+<status status="PASS" start="2025-05-02T19:31:44.410312" elapsed="4.459530"/>
+</suite>
+<statistics>
+<total>
+<stat pass="9" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Main" id="s1" pass="9" fail="0" skip="0">Main</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
