@@ -58,6 +58,9 @@ jobs:
           source venv/bin/activate
           pip install robotframework robotframework-seleniumlibrary
 
+      - name: Start server
+        run: npm run dev &
+
       - name: Wait for server to start
         run: |
           for i in {1..30}; do
