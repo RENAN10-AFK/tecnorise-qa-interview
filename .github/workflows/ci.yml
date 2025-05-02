@@ -14,10 +14,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
@@ -27,13 +27,10 @@ jobs:
       - name: Run linter
         run: npm run lint
 
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.12'
+          python-version: "3.12"
 
       - name: Install system dependencies
         run: |
@@ -46,27 +43,6 @@ jobs:
           sudo dpkg -i google-chrome.deb || sudo apt-get -f install -y
         env:
           DEBIAN_FRONTEND: noninteractive
-
-      - name: Install ChromeDriver
-        run: |
-          CHROME_VERSION=$(google-chrome --version | grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+')
-          if [ -z "$CHROME_VERSION" ]; then
-            echo "Não foi possível obter a versão do Google Chrome." >&2
-            exit 1
-          fi
-          echo "Versão do Chrome instalada: ${CHROME_VERSION}"
-          CHROME_MAJOR=$(echo "$CHROME_VERSION" | cut -d. -f1)
-          echo "Versão major do Chrome: ${CHROME_MAJOR}"
-          CHROMEDRIVER_VERSION=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_MAJOR}")
-          if [ -z "$CHROMEDRIVER_VERSION" ]; then
-            echo "Não foi possível obter a versão do ChromeDriver para o Chrome major $CHROME_MAJOR." >&2
-            exit 1
-          fi
-          echo "Versão do ChromeDriver a ser instalada: ${CHROMEDRIVER_VERSION}"
-          wget -q -O chromedriver.zip https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip
-          unzip chromedriver.zip
-          sudo mv chromedriver /usr/bin/chromedriver
-          sudo chmod +x /usr/bin/chromedriver
 
       - name: Set up Python environment
         run: |
@@ -93,10 +69,7 @@ jobs:
       - name: Run Chrome Robot Tests
         run: |
           source venv/bin/activate
-          xvfb-run robot \
-            --variable BROWSER:chrome \
-            --outputdir robot/results \
-            robot/tests
+          xvfb-run robot --variable BROWSER:chrome --outputdir robot/results robot/tests
         shell: bash
 
       - name: Upload Robot Framework Reports
