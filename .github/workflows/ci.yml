@@ -27,6 +27,33 @@ jobs:
       - name: Run linter
         run: npm run lint
 
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y git xvfb scrot zip curl libxml2-dev libxslt1-dev
+
+      - name: Set up Python environment
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install --upgrade pip
+          pip install robotframework \
+                      robotframework-seleniumlibrary
+
+      - name: Configure browser for Robot Framework
+        run: |
+          sudo apt-get install -y chromium-browser
+          export BROWSER=chromium
+          export PATH=$PATH:/usr/bin/chromium-browser
+
       - name: Run tests
         run: |
           npm run dev &
