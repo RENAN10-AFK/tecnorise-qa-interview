@@ -63,5 +63,20 @@ Os testes automatizados foram realizados utilizando o Robot Framework com a bibl
 3. **Ajuste de Layout para Descrições Longas**
    - Garantir que descrições longas sejam truncadas ou exibidas de forma adequada no card do produto.
 
+### Integração com GitHub Actions
+
+O projeto conta com uma integração configurada no GitHub Actions para executar os testes automatizados. A cada push ou pull request na branch `main`, os seguintes passos são realizados automaticamente:
+
+1. Instalação das dependências do projeto.
+2. Configuração do ambiente de testes.
+3. Execução dos testes automatizados utilizando o Robot Framework.
+4. Geração de relatórios de teste, que são disponibilizados como artefatos no GitHub Actions.
+
+#### Acesso aos Resultados
+Os relatórios de teste gerados podem ser acessados diretamente nos artefatos do workflow no GitHub Actions. Eles incluem:
+- **log.html**: Log detalhado da execução dos testes.
+- **report.html**: Relatório consolidado dos testes realizados.
+- **output.xml**: Arquivo XML com os resultados dos testes.
+
 ### Conclusão
 Os testes automatizados demonstraram que o sistema está funcional e atende aos requisitos básicos. As melhorias sugeridas podem ser implementadas para aumentar a robustez e a usabilidade do sistema.
